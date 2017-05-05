@@ -35,12 +35,12 @@
     Stack<NSString *,NSDictionary *> *strst = [[Stack alloc]init];
     [strst pushObject:@"哈哈"];
     
-    [strst carUsingBlock:^(NSUInteger idx, NSString * _Nullable a) {
+    [strst carUsingBlock:^(NSUInteger idx, NSString * a) {
         NSLog(@"回调回来的参数是 %lu\n%@",(unsigned long)idx,a);
     }];
 
     //接下来就是bt的要死的用法，呵呵 ，网络请求回调非常犀利。
-   Stack* strstMine= [strst heiheiWithBlock:^(Stack<NSString *,NSDictionary *> * _Nullable task) {
+   Stack* strstMine= [strst heiheiWithBlock:^(Stack<NSString *,NSDictionary *> * task) {
         NSLog(@"%@",task.sresult);
     }];
     NSLog(@"strstMine = %@,strst = %@",strstMine,strst);

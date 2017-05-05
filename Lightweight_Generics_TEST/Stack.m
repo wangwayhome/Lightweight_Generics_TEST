@@ -20,7 +20,7 @@
 - (void)carUsingBlock:(carblock)block {
     block(1,@"honda");
 }
-- (Stack *_Nullable)heiheiWithBlock:(heiheiBlock _Nullable )block{
+- (Stack *)heiheiWithBlock:(heiheiBlock)block{
     self.sresult = @"heihei back result";
     block(self);
     

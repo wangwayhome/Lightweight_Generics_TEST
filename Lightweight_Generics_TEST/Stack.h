@@ -9,24 +9,25 @@
 #import <Foundation/Foundation.h>
 
 @interface Stack<ObjectType,ResultType> : NSObject
-- (void)pushObject:(ObjectType _Nullable )object;
-- (ObjectType _Nullable )popObject;
+
+- (void)pushObject:(ObjectType)object;
+- (ObjectType)popObject;
 
 
 
-typedef  void(^carblock)(NSUInteger idx, ObjectType _Nullable a);//用ObjectType 定义一个类型
+typedef  void(^carblock)(NSUInteger idx, ObjectType  a);//用ObjectType 定义一个类型
 
-typedef void(^heiheiBlock)(Stack<ObjectType,ResultType> * _Nullable task);//范型类做参数
-
-
-- (void)carUsingBlock:(carblock _Nullable )block;
-
-- (Stack *_Nullable)heiheiWithBlock:(heiheiBlock _Nullable )block;
+typedef void(^heiheiBlock)(Stack<ObjectType,ResultType> *  task);//范型类做参数
 
 
-@property (nonatomic, readonly) NSArray<ObjectType> * _Nullable allObjects;
+- (void)carUsingBlock:(carblock  )block;
 
-@property (nullable, nonatomic, strong) ResultType sresult;
+- (Stack *)heiheiWithBlock:(heiheiBlock  )block;
+
+
+@property (nonatomic, readonly) NSArray<ObjectType> *  allObjects;
+
+@property (nonatomic, strong) ResultType sresult;
 
 @end
 
