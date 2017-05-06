@@ -32,7 +32,7 @@
     NSLog(@"%@",[mapping objectForKey:@"HONDA"]);
     
     //自定义类属性的泛型
-    Stack<NSString *,NSDictionary *> *strst = [[Stack alloc]init];
+    Stack<NSString *,NSMutableDictionary *> *strst = [[Stack alloc]init];
     [strst pushObject:@"哈哈"];
     
     [strst carUsingBlock:^(NSUInteger idx, NSString * a) {
@@ -40,7 +40,7 @@
     }];
 
     //接下来就是bt的要死的用法，呵呵 ，网络请求回调非常犀利。
-   Stack* strstMine= [strst heiheiWithBlock:^(Stack<NSString *,NSDictionary *> * task) {
+   Stack* strstMine= [strst heiheiWithBlock:^(Stack<NSString *,NSMutableDictionary *> * task) {
         NSLog(@"%@",task.sresult);
     }];
     NSLog(@"strstMine = %@,strst = %@",strstMine,strst);

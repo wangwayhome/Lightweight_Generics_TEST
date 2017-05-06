@@ -21,11 +21,14 @@
     block(1,@"honda");
 }
 - (Stack *)heiheiWithBlock:(heiheiBlock)block{
-    self.sresult = @"heihei back result";
+    
+    self.sresult = [NSMutableDictionary dictionaryWithObject:@"sss" forKey:@"bbb"];
     block(self);
     
     return self;
 }
+
+
 
 
 @end
